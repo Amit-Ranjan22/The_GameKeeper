@@ -1,8 +1,14 @@
 {
   "name": "the_gamekeeper",
   "version": "1.0.0",
-  "description": "E-Commerce website using MERN",
+  "description": "E-commerce Gaming website with MERN",
   "main": "server.js",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,10 +21,5 @@
   "bugs": {
     "url": "https://github.com/Amit-Ranjan22/The_GameKeeper/issues"
   },
-  "homepage": "https://github.com/Amit-Ranjan22/The_GameKeeper#readme",
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.17.2",
-    "mongoose": "^6.2.0"
-  }
+  "homepage": "https://github.com/Amit-Ranjan22/The_GameKeeper#readme"
 }
