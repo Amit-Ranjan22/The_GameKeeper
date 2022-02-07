@@ -27,7 +27,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
             }
         ],
-        "category": "Electronics",
+        "category": "Vintage collection",
         "seller": "Amazon",
         "stock": 0,
         "numOfReviews": 2,
@@ -44,7 +44,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606231285/products/chairmount_nuubea.jpg"
             }
         ],
-        "category": "Electronics",
+        "category": "Ral-Time-Strategy(RTS)",
         "seller": "Amazon",
         "stock": 1,
         "numOfReviews": 12,
@@ -61,7 +61,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606231281/products/headphones_t2afnb.jpg"
             }
         ],
-        "category": "Headphones",
+        "category": "Multiplayer online battle arena(MOBA)",
         "seller": "Amazon",
         "stock": 11,
         "numOfReviews": 112,
@@ -78,7 +78,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606231282/products/airpords_e5cqqr.jpg"
             }
         ],
-        "category": "Electronics",
+        "category": "Puzzlers and party games",
         "seller": "Amazon",
         "stock": 122,
         "numOfReviews": 2671,
@@ -95,7 +95,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606233125/products/eahhtj1bkn1k9gjgd3hn.jpg"
             }
         ],
-        "category": "Accessories",
+        "category": "Action-adventure games",
         "seller": "Amazon",
         "stock": 1123,
         "numOfReviews": 6,
@@ -112,7 +112,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606231283/products/camera_ridc0i.jpg"
             }
         ],
-        "category": "Cameras",
+        "category": "Shooters(FPS and TPS)",
         "seller": "Amazon",
         "stock": 131,
         "numOfReviews": 222,
@@ -129,7 +129,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606231282/products/macbook_o2cj2k.jpg"
             }
         ],
-        "category": "Laptops",
+        "category": "Sports games",
         "seller": "Amazon",
         "stock": 0,
         "numOfReviews": 56,
@@ -154,7 +154,7 @@
                 "url": "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/bshmuo9qisfhz4azvnsd.jpg"
             }
         ],
-        "category": "Food",
+        "category": "Horror",
         "seller": "Kauffman's Fruit Farm & Market",
         "stock": 500,
         "numOfReviews": 1,
