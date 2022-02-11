@@ -1,8 +1,9 @@
+import Header from './components/layout/Header'
 
 function App() {
   return (
     <div className="App">
-      <h1>The gameKeeper</h1>
+      <Header />
     </div>
   );
 }
