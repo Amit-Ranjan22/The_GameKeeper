@@ -106,7 +106,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Password reset token is invalid or has been expired', 400))
     }
 
-    if(req.body.password !== req.body.confirmPassword) {
+    if (req.body.password !== req.body.confirmPassword) {
         return next(new ErrorHandler('Password does not match', 400))
     }
 
@@ -120,6 +120,16 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
     sendToken(user, 200, res)
 
+})
+
+//get currently logged in user details => /api/v1/me
+exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.user.id);
+
+    res.status(200).json({
+        success: true,
+        user
+    })
 })
 
 
