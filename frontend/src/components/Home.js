@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 const Home = () => {
     return (
-        <div className="container container-fluid">
+        <Fragment>
             <h1 id="products_heading">Latest Products</h1>
 
             <section id="products" className="container mt-5">
@@ -12,10 +12,10 @@ const Home = () => {
                             <img
                                 className="card-img-top mx-auto"
                                 src="https://m.media-amazon.com/images/I/617NtexaW2L._AC_UY218_.jpg"
-                            />
+                            alt=''/>
                             <div className="card-body d-flex flex-column">
                                 <h5 className="card-title">
-                                    <a href="">128GB Solid Storage Memory card - SanDisk Ultra</a>
+                                    <a href="#">128GB Solid Storage Memory card - SanDisk Ultra</a>
                                 </h5>
                                 <div className="ratings mt-auto">
                                     <div className="rating-outer">
@@ -30,7 +30,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </Fragment>
     )
 };
 
