@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -13,6 +13,7 @@ function App() {
         <Header />
         <div className="container container-fluid">
           <Route path="/" component={Home} exact/>
+          <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact/>
         </div>
         <Footer />
