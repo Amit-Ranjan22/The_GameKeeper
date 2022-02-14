@@ -39,15 +39,18 @@ const productSchema = new mongoose.Schema({
         required: [true, 'Please select category for this product'],
         enum: {
             values: [
-                'Ral-Time-Strategy(RTS)',
-                'Multiplayer online battle arena(MOBA)',
-                'Role-playing(RPG)',
-                'Puzzlers and party games',
-                'Action-adventure games',
-                'Shooters(FPS and TPS)',
-                'Sports games',
-                'Horror',
-                'Vintage collection'
+                'Electronics',
+                'Cameras',
+                'Laptops',
+                'Accessories',
+                'Headphones',
+                'Food',
+                "Books",
+                'Clothes/Shoes',
+                'Beauty/Health',
+                'Sports',
+                'Outdoor',
+                'Home'
             ],
             message: 'Please select correct category for product'
         }
