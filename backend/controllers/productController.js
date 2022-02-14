@@ -24,7 +24,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 //GEt all products => /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 8;
+    const resPerPage = 4;
 
     //"productCount" will be used in the front end to show total number of products on a page.
     const productsCount = await Product.countDocuments();
@@ -41,6 +41,7 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
         success: true,
         // count: products.length,
         productsCount,
+        resPerPage,
         products
     })
     
