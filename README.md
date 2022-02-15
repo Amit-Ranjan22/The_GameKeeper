@@ -29,7 +29,17 @@ The Gamekeeper is an e-commerce website that allows users to buy,sell, and trade
 NPM (insert heroku link here)
 
 ## Usage 
-Avid Vintage/Classic Video Game users. 
+Technology used: 
+Mongodb 
+NPM 
+Redux 
+React 
+Heroku 
+Mongoose 
+Javascript 
+HTML 
+CSS 
+Bootstrap
 
 ## Contribution
 Founders of the app: Amit Ramjan, Erin Beatty, Joseph Arthur
