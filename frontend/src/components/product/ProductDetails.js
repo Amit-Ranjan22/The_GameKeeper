@@ -96,7 +96,7 @@ const ProductDetails = ({ match }) => {
                             <h4 className="mt-2">Description:</h4>
                             <p>{product.description}</p>
                             <hr />
-                            <p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p>
+                            <p id="product_seller mb-3">Sold By: <strong>{product.seller}</strong></p>
 
                             <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal"
                                 data-target="#ratingModal">
