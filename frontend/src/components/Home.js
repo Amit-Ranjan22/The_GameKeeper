@@ -16,24 +16,25 @@ const Range = createSliderWithTooltip(Slider.Range)
 
 const Home = ({ match }) => {
 
-    const [currentPage, , setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
     const [price, setPrice] = useState([1, 1000])
-    const [category, setCategory] = useState('')
+    const [system, setSystem] = useState('')
     const [rating, setRating] = useState(0)
 
-    const categories = [
-        'Electronics',
-        'Cameras',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        "Books",
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
+    const systems = [
+        'Nintendo NES',
+        'Super Nintendo',
+        'Nintendo 64',
+        'Nintendo Game Cube',
+        'Nintendo Wii',
+        'Nintendo GameBoy',
+        'Nintendo DS',
+        'Nintendo Switch',
+        'Playstation 1',
+        'Playstation 2',
+        'Playstation 3',
+        'Playstation 4',
+        'Playstation PSP'
     ]
 
     const alert = useAlert();
@@ -42,23 +43,25 @@ const Home = ({ match }) => {
     const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
 
     const keyword = match.params.keyword
+    
 
     useEffect(() => {
         if (error) {
             return alert.error(error);
         }
 
-        dispatch(getProducts(keyword, currentPage, price, category, rating));
+        dispatch(getProducts(keyword, currentPage, price, system, rating));
 
-    }, [dispatch, alert, error, keyword, currentPage, price, category, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, system, rating])
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
     }
 
     let count = productsCount;
-    if (keyword) {
+    if (keyword || system) {
         count = filteredProductsCount
+        //productsCount = filteredProductsCount
     }
 
     return (
@@ -70,9 +73,7 @@ const Home = ({ match }) => {
 
                     <section id="products" className="container mt-5">
                         <div className="row">
-
-                            {keyword ? (
-                                <Fragment>
+                        <Fragment>
                                     <div className="col-6 col-md-3 mt-5 mb-5">
                                         <div className="px-5">
                                             <Range
@@ -96,22 +97,31 @@ const Home = ({ match }) => {
 
                                             <div className="mt-5">
                                                 <h4 className="mb-3">
-                                                    Categories
+                                                    Gaming Systems
                                                 </h4>
 
                                                 <ul className="pl-0">
-                                                    {categories.map(category => (
+                                                <li style={{ cursor: 'pointer', listStyleType: 'none' }}
+                                                            key=''
+                                                            className="system-name"
+                                                            onClick={() => setSystem('')}>
+                                                            All Systems
+                                                        </li>
+                                                    {systems.map(category => (
+                                                        
                                                         <li style={{ cursor: 'pointer', listStyleType: 'none' }}
                                                             key={category}
-                                                            onClick={() => setCategory(category)}>
-
+                                                            className="system-name"
+                                                            onClick={() => setSystem(category)}>
                                                             {category}
                                                         </li>
+                                                        
+                                                       
                                                     ))}
                                                 </ul>
                                             </div>
 
-                                            <hr className="my-3" />
+                                            {/* <hr className="my-3" /> */}
 
                                             <div className="mt-5">
                                                 <h4 className="mb-3">
@@ -128,7 +138,7 @@ const Home = ({ match }) => {
                                                                 <div className="rating-inner"
                                                                     style={{
                                                                         width: `${star * 20}%`
-                                                                }}
+                                                                    }}
                                                                 >
 
                                                                 </div>
@@ -142,17 +152,12 @@ const Home = ({ match }) => {
                                     </div>
                                     <div className="col-6 col-md-9">
                                         <div className="row">
-                                            {products.map(product => (
-                                                <Product key={product._id} product={product} col={4} />
+                                            {products?.map(product => (
+                                                <Product key={product._id} product={product} col={3} />
                                             ))}
                                         </div>
                                     </div>
                                 </Fragment>
-                            ) : (
-                                products.map(product => (
-                                    <Product key={product._id} product={product} col={3} />
-                                ))
-                            )}
                         </div>
                     </section>
                     {resPerPage <= count && (
@@ -160,7 +165,7 @@ const Home = ({ match }) => {
                             <Pagination
                                 activePage={currentPage}
                                 itemsCountPerPage={resPerPage}
-                                totalItemsCount={productsCount}
+                                totalItemsCount={filteredProductsCount}
                                 onChange={setCurrentPageNo}
                                 nextPageText={'Next'}
                                 prevPageText={'Prev'}

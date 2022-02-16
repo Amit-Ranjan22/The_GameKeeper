@@ -56,11 +56,11 @@ const ProductDetails = ({ match }) => {
 
                             <p id="product_price">${product.price}</p>
                             <div className="stockCounter d-inline">
-                                <span className="btn btn-danger minus">-</span>
+                                {/* <span className="btn btn-danger minus">-</span> */}
 
-                                <input type="number" className="form-control count d-inline" value="1" readOnly />
+                                <input type="number" className="form-control count d-inline" defaultValue="1" />
 
-                                <span className="btn btn-primary plus">+</span>
+                                {/* <span className="btn btn-primary plus">+</span> */}
                             </div>
                             <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4">Add to Cart</button>
 

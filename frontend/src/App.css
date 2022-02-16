@@ -6,7 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background-color: #90e0ef;
+  background-color: #eeeeee;
 }
 
 /* Scroll Bar */
@@ -101,6 +101,7 @@ nav {
 
 .card-img-top {
   width: 200px;
+  max-width:100%;
   height: 150px;
 }
 
@@ -615,4 +616,9 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+
+li.system-name{
+  border-bottom:1px solid silver;
+  padding:.5rem 0;
 }

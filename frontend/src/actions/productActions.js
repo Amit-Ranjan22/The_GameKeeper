@@ -11,17 +11,17 @@ import {
 
 } from '../constants/productConstants'
 
-export const getProducts = (keyword = '', currentPage = 1, price, category, rating = 0) => async (dispatch) => {
+export const getProducts = (keyword = '', currentPage = 1, price, system, rating = 0) => async (dispatch) => {
     try {
-
+            console.log("Getting or Searching Products...")
         dispatch({ type: ALL_PRODUCTS_REQUEST })
 
         //by default this link doesn't have category
         let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}`
 
         //if category exist, we have to add the link
-        if(category) {
-            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category=${category}&ratings[gte]=${rating}`
+        if(system) {
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&system=${system}&ratings[gte]=${rating}`
         }
 
         const { data } = await axios.get(link)

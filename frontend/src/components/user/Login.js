@@ -19,6 +19,7 @@ const Login = ({ history }) => {
     const { isAuthenticated, error, loading } = useSelector(state => state.auth);
 
     useEffect(() => {
+        
 
         if (isAuthenticated) {
             history.push('/')
@@ -26,6 +27,7 @@ const Login = ({ history }) => {
 
         if (error) {
             alert.error(error);
+            
             dispatch(clearErrors());
         }
 
@@ -44,10 +46,11 @@ const Login = ({ history }) => {
                     <MetaData title={Login} />
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
+                           
                             <form className="shadow-lg" onSubmit={submitHandler}>
                                 <h1 className="mb-3">Login</h1>
                                 <div className="form-group">
-                                    <label htmlfor="email_field">Email</label>
+                                    <label htmlFor="email_field">Email</label>
                                     <input
                                         type="email"
                                         id="email_field"
@@ -58,7 +61,7 @@ const Login = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlfor="password_field">Password</label>
+                                    <label htmlFor="password_field">Password</label>
                                     <input
                                         type="password"
                                         id="password_field"

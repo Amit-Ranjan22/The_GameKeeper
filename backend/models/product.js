@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
         maxLength: [5, 'Product name cannot exceed 5 characters'],
         default: 0.0
     },
-    description: {
+    system: {
         type: String,
         required: [true, 'Please enter product description'],
     },
@@ -22,46 +22,53 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    images: [
-        {
-            public_id: {
-                type: String,
-                required: true
-            },
-            url: {
-                type: String,
-                required: true
-            }
-        }
-    ],
-    category: {
+    images: [{
+        url: String
+    }],
+    // images: [
+    //     {
+    //         public_id: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         url: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     }
+    // ],
+    system: {
         type: String,
-        required: [true, 'Please select category for this product'],
+        required: [true, 'Please select a Gaming Console'],
         enum: {
             values: [
-                'Electronics',
-                'Cameras',
-                'Laptops',
-                'Accessories',
-                'Headphones',
-                'Food',
-                "Books",
-                'Clothes/Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
+                'Nintendo NES',
+                'Super Nintendo',
+                'Nintendo 64',
+                'Nintendo Game Cube',
+                'Nintendo Wii',
+                'Nintendo GameBoy',
+                'Nintendo DS',
+                'Nintendo Switch',
+                'Playstation 1',
+                'Playstation 2',
+                'Playstation 3',
+                'Playstation 4',
+                'Playstation PSP',
+                'Original Xbox',
+                'Original Xbox',
+                'Xbox 360'
             ],
-            message: 'Please select correct category for product'
+            message: 'Please select correct gaming Console'
         }
     },
-    seller: {
-        type: String,
-        required: [true, 'Please enter product seller']
-    },
+    // seller: {
+    //     type: String,
+    //     required: [true, 'Please enter product seller']
+    // },
     stock: {
         type: Number,
-        required: [true, 'Please enter product stock'],
+        required: [true, 'Please enter product Qty'],
         maxLength: [5, 'Product name cannot exceed 5 characters'],
         default: 0
     },
@@ -69,37 +76,41 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    reviews: [
+    // reviews: [
 
-        {
-            user: {
-                type: mongoose.Schema.ObjectId,
-                ref: 'User',
-                required: true
-            },
-            name: {
-                type: String,
-                required: true
-            },
-            rating: {
-                type: Number,
-                required: true
-            },
-            comment: {
-                type: String,
-                required: true
-            }
-        }
-    ],
-    user: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'User',
-        required: true
-    },
+    //     {
+    //         user: {
+    //             type: mongoose.Schema.ObjectId,
+    //             ref: 'User',
+    //             required: true
+    //         },
+    //         name: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         rating: {
+    //             type: Number,
+    //             required: true
+    //         },
+    //         comment: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     }
+    // ],
+    // user: {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: 'User',
+    //     required: true
+    // },
     createdAt: {
         type: Date,
         default: Date.now
     }
 })
 
-module.exports = mongoose.model('product', productSchema);
+// module.exports = mongoose.model('product', productSchema);
+
+const Product = mongoose.model('product', productSchema);
+
+module.exports = Product
