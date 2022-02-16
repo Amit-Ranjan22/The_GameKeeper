@@ -27,11 +27,7 @@ const Header = () => {
                 <div className="col-12 col-md-3">
                     <div className="navbar-brand">
                         <Link to="/">
-<<<<<<< HEAD
                         <img src="/images/GameKeeper.png" alt=''/>
-=======
-                            <img src="/images/shopit_logo.png" alt='' />
->>>>>>> be0616ddd4f8ab99db63335c95974dad171baec3
                         </Link>
                         {/* <h2>The-GameKeeper</h2> */}
                     </div>

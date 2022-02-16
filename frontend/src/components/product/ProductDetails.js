@@ -85,19 +85,16 @@ const ProductDetails = ({ match }) => {
 
                             <p id="product_price">${product.price}</p>
                             <div className="stockCounter d-inline">
-<<<<<<< HEAD
                                 {/* <span className="btn btn-danger minus">-</span> */}
 
-                                <input type="number" className="form-control count d-inline" defaultValue="1" />
+                                {/* <input type="number" className="form-control count d-inline" defaultValue="1" /> */}
 
                                 {/* <span className="btn btn-primary plus">+</span> */}
-=======
                                 <span className="btn btn-danger minus" onClick = {decreaseQty}>-</span>
 
                                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
 
                                 <span className="btn btn-primary plus" onClick = {increaseQty}>+</span>
->>>>>>> be0616ddd4f8ab99db63335c95974dad171baec3
                             </div>
                             <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled = {product.stock === 0} onClick = {addToCart}>Add to Cart</button>
 
