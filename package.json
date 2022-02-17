@@ -21,9 +21,16 @@
   },
   "scripts": {
     "start": "node backend/server.js",
+    "build": "react-scripts build",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
     "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server",
     "seeder": "node backend/utils/seeder.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "repository": {
     "type": "git",
